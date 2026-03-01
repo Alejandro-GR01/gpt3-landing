@@ -1,0 +1,133 @@
+.gpt3__article {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  position: relative;
+
+  /* ===== VARIABLES ===== */
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  --lift: 0px;
+  --shadowX: 0px;
+  --shadowY: 15px;
+
+  background: var(--color-footer);
+
+  /* contexto 3D */
+  transform-style: preserve-3d;
+  perspective: 1200px;
+
+  transform: rotateX(var(--rotateX)) rotateY(var(--rotateY))
+    translateY(var(--lift));
+
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  will-change: transform;
+
+  /* sombra base */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gpt3__article:hover {
+  --lift: -6px;
+
+  box-shadow: var(--shadowX) var(--shadowY) 35px rgba(0, 0, 0, 0.22);
+}
+
+.gpt3__article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.1),
+    transparent 65%
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gpt3__article:hover::after {
+  opacity: 1;
+}
+
+.gpt3__article-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+
+  transform: translateZ(20px);
+}
+
+.gpt3__article-img picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.gpt3__article-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 0.4s ease;
+
+  transform: scale(1.01);
+}
+
+.gpt3__article:hover .gpt3__article-img img {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+
+.gpt3__article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  height: 100%;
+
+  transform: translateZ(35px);
+}
+
+.gpt3__article-content p {
+  font-size: 11.46px;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+.gpt3__article-content h3 {
+  font-weight: 800;
+  font-size: 25.11px;
+  line-height: 30px;
+  margin-bottom: 5rem;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.gpt3__article:hover h3 {
+  transform: translateY(-2px);
+}
+
+.gpt3__article-content p:last-child {
+  cursor: pointer;
+}
+
+@media (width <= 550px) {
+  .gpt3__article-content h3 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}

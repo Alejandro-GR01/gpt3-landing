@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: #fff;
+  font-family: var(--font-family);
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.gradient__bg {
+  background: radial-gradient(
+    circle at 0% 23%,
+    rgba(0, 40, 83, 1) 0%,
+    #040c18 100%
+  );
+}
+
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+  padding: 40px;
+  max-width: 1440px;
+  /* overflow-x: hidden; */
+  margin: 0 auto;
+}
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section__margin {
+  margin: 40px 32px;
+}
+
+@media (width<= 700px) {
+  .section__padding {
+    padding: 4rem;
+  }
+
+  .section__margin {
+    margin: 4rem;
+  }
+}
+@media (width <= 550px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+
+  .section__margin {
+    margin: 4rem 2rem;
+  }
+}
+
+.button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  &:focus{
+     transform: scale(1.05);
+    opacity: 0.9;
+    outline: none;
+  }
+
+}
+
+.link-underline {
+  cursor: pointer;
+  margin-bottom: 1px;
+  position: relative;
+
+  &:hover {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 0%;
+    content: "";
+    background: #fff;
+
+    transition: all 0.3s ease;
+  }
+  &:focus{
+    outline: none;
+  }
+
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:focus::after{
+    width: 100%;
+  }
+
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateX(4px) translateY(8px);
+  }
+  25% {
+    transform: translateX(-4px) translateY(-8px);
+  }
+  50% {
+    transform: translateX(-4px) translateY(8px);
+  }
+  75% {
+    transform: translateX(4px) translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out both;
+}
+.animate-fade-out {
+  animation: fade-out 0.5s ease-in-out both;
+}
+
+.animation-duration_15s{
+  animation-duration: 15s ;
+}
