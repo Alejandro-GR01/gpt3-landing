@@ -5,7 +5,10 @@
 ![GSAP](https://img.shields.io/badge/GSAP-3-88CE02?logo=greensock&logoColor=black)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Página de aterrizaje moderna inspirada en **OpenAI GPT-3**, construida con **React 19** y **GSAP** para animaciones fluidas y una experiencia visual profesional.
+
+Una landing page moderna inspirada en **GPT-3** y las plataformas de inteligencia artificial, diseñada para presentar información de forma clara y atractiva. El proyecto se centra en un diseño de interfaz limpio, secciones de contenido estructuradas y un layout visual consistente que destaca conceptos clave relacionados con la tecnología de IA.
+
+Construida siguiendo prácticas modernas de desarrollo frontend, la página enfatiza el diseño responsive, la jerarquía visual y una interfaz intuitiva en diferentes tamaños de pantalla.
 
 ---
 
