@@ -7,13 +7,13 @@ import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 
 
 
-const Menu = () => (
+const Menu = ({handleClosingMenu}) => (
   <>
-    <p><a href="#home" className='link-underline'>Home</a></p>
-    <p><a href="#whgpt3" className='link-underline'>What is GPT?</a></p>
-    <p><a href="#possibility" className='link-underline'>Open AI</a></p>
-    <p><a href="#features" className='link-underline'>Case Studies</a></p>
-    <p><a href="#blog" className='link-underline'>Library</a></p>
+    <p><a href="#home" className='link-underline' onClick={handleClosingMenu}>Home</a></p>
+    <p><a href="#whgpt3" className='link-underline' onClick={handleClosingMenu}>What is GPT?</a></p>
+    <p><a href="#possibility" className='link-underline' onClick={handleClosingMenu}>Open AI</a></p>
+    <p><a href="#features" className='link-underline' onClick={handleClosingMenu}>Case Studies</a></p>
+    <p><a href="#blog" className='link-underline' onClick={handleClosingMenu}>Library</a></p>
   </>
 )
 
@@ -41,8 +41,8 @@ const Navbar = () => {
 
 
   return (
-    <header  className='animate-fade-in relative  gpt3__navbar '>
-      <div className='gpt3__navbar-links'>
+    <header  className='animate-fade-in relative  gpt3__navbar w-svw '>
+      <nav className='gpt3__navbar-links'>
         <div className='gpt3__navbar-links_logo'>
           <img src={logo} alt="logo" loading="eager"
   fetchPriority="high"/>
@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className='gpt3__navbar-links_container'>
           <Menu />
         </div>
-      </div>
+      </nav>
       <div className='gpt3__navbar-sign'>
         <button className='button gpt3__navbar-menu__button-light'>Sign in</button>
         <button type='button' className='button gpt3__navbar-menu__button-orange'>Sign up</button>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <>
             <div className={`${toogleMenu && !isClosing ? 'animate-fade-in' : isClosing && 'animate-fade-out'}  relative gpt3__navbar-menu_container scale-up_center`}>
               <div className='gpt3__navbar-menu_container-links'>
-                <Menu />
+                <Menu handleClosingMenu={handleClosingMenu} />
                 <div className='gpt3__navbar-menu_container-links-sign'>
                   <button className='button gpt3__navbar-menu__button-light'>Sign in</button>
                   <button type='button' className='button gpt3__navbar-menu__button-orange'>Sign up</button>

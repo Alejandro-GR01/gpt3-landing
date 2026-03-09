@@ -14,8 +14,8 @@ const Brand = () => {
 
     gsap.from('.gpt3__brand .brand-item', {
       scrollTrigger: {
-        trigger: '.gpt3_brand',
-        start: 'top top',
+        trigger: '.gpt3__brand',
+        start: 'top 80%',
 
       },
       x: 200,
@@ -30,7 +30,7 @@ const Brand = () => {
 
 
   return (
-    <div ref={brandRef} className='gpt3__brand section__padding'>
+    <div ref={brandRef}  className='gpt3__brand section__padding'>
       <div className='brand-item'>
         <picture>
           <source srcSet={googleAvif} type='image/avif' />
